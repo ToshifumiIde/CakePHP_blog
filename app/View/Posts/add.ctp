@@ -4,7 +4,7 @@
 //FormHelperを用いてHTMLフォームタグを生成
 echo $this->Form->create("Post");
 echo $this->Form->input("title");
-echo $this->Form->input("body" , array("row" => 3));
+echo $this->Form->input("body" , array("row" => "3"));
 echo $this->Form->end("Save Post");
 ?>
 <!-- $this->Form->create()で生成されるHTMLは次の通り -->
