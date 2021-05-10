@@ -9,6 +9,7 @@
 <tr>
   <th>Id</th>
   <th>Title</th>
+  <th>Action</th>
   <th>Created</th>
 </tr>
 <?php foreach($posts as $post):?>
@@ -16,6 +17,9 @@
     <td><?php echo $post["Post"]["id"] ;?></td>
     <td>
     <?php echo $this->Html->link($post["Post"]["title"] , array("controller"=>"posts" , "action"=>"view" , $post["Post"]["id"]));?>
+    </td>
+    <td>
+    <?php echo $this->Html->link("Edit" , array("action"=>"edit" , $post["Post"]["id"]));?>
     </td>
     <!-- $this->HtmlはHtmlHelperクラスのインスタンスを生成 -->
     <!-- $this->Html->link("タイトル" , url")にてリンク先を生成 -->

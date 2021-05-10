@@ -45,9 +45,9 @@ class PostsController extends AppController{
     if(!$id){
       throw new NotFoundException(__("Invalid post"));
     }
-    
+
     //リクエストがPOSTかPUTか確認
-    $post = $this->Post->FindById($id);
+    $post = $this->Post->findById($id);
     if(!$post){
       throw new NotFoundException(__("Invalid post"));
     }
@@ -55,7 +55,7 @@ class PostsController extends AppController{
     if($this->request->is(array("post","put"))){
       $this->Post->id = $id;
       if($this->Post->save($this->request->data)){
-        $this->Flush->success(("Your post has been updated"));
+        $this->Flash->success(("Your post has been updated"));
         return $this->redirect(array("action" => "index"));
       }
       $this->Flash->error(__("Unable to update your post."));
