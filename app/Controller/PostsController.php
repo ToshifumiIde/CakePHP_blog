@@ -10,7 +10,9 @@ class PostsController extends AppController{
   public function index(){
     //set()メソッドで変数を用意
     //"posts"に対し「（自分で作成した）Postモデル」のfind()メソッドを用いて"all"を指定することで、dbの全ての情報を取得する。
-    $this->set("posts" , $this->Post->find("all"));
+    $params = array("order"=>"modified desc");
+
+    $this->set("posts" , $this->Post->find("all" , $params));
     $this->set("title_for_layout" , "記事一覧");
   }
 

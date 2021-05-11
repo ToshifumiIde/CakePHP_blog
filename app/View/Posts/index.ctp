@@ -12,6 +12,7 @@
   <th>Id</th>
   <th>Title</th>
   <th>Action</th>
+  <th>Delete</th>
   <th>Created</th>
 </tr>
 <?php foreach($posts as $post):?>
