@@ -11,6 +11,7 @@ class PostsController extends AppController{
     //set()メソッドで変数を用意
     //"posts"に対し「（自分で作成した）Postモデル」のfind()メソッドを用いて"all"を指定することで、dbの全ての情報を取得する。
     $this->set("posts" , $this->Post->find("all"));
+    $this->set("title_for_layout" , "記事一覧");
   }
 
   //posts/viewへのアクセスに必要なメソッド

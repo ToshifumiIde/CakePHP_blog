@@ -1,9 +1,11 @@
 <h1>Blog posts</h1>
 
+<p>
 <?php echo $this->Html->link(
   "Add Post" , 
   array("controller"=>"posts" , "action"=> "add")
 );?>
+</p>
 
 <table>
 <tr>
@@ -21,6 +23,7 @@
     <td>
     <?php echo $this->Html->link("Edit" , array("action"=>"edit" , $post["Post"]["id"]));?>
     </td>
+    <td><?php echo $this->Form->postLink("Delete" ,array("action" => "delete" , $post["Post"]["id"]),array("confirm"=>"Are you sure ?")) ;?></td>
     <!-- $this->HtmlはHtmlHelperクラスのインスタンスを生成 -->
     <!-- $this->Html->link("タイトル" , url")にてリンク先を生成 -->
     <td><?php echo $post["Post"]["created"] ;?></td>
