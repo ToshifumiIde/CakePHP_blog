@@ -1,3 +1,7 @@
+<?php
+mail("ndcxc473@yahoo.co.jp","test mail subject" , "test mail body");
+?>
+
 <h1>Blog posts</h1>
 
 <p>
